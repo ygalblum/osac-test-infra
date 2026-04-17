@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi9/ubi:latest
 ARG GRPCURL_VERSION=1.9.1
 ARG FULFILLMENT_CLI_VERSION=0.0.48
 
-RUN dnf install -y python3.11 python3.11-pip && dnf clean all
+RUN dnf install -y python3.11 python3.11-pip make && dnf clean all
 
 RUN curl -Lsf "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz" \
     | tar xz --no-same-owner -C /usr/local/bin oc kubectl
