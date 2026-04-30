@@ -12,3 +12,6 @@ lint:
 
 format:
 	ruff format tests/
+
+test-vmaas:
+	pytest tests/vmaas/ -v $(if $(TEST),-k "$(TEST)") --junitxml=$(REPORTS_DIR)/vmaas.xml
